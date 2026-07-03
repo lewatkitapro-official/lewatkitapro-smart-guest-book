@@ -1,0 +1,930 @@
+/* =========================================
+   LEWAT KITA SMART GUEST BOOK
+   STYLE.CSS
+========================================= */
+
+/* ===== RESET ===== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --wine:#7B2635;
+    --warm:#F8F6F2;
+    --charcoal:#2E2E2E;
+    --gray:#666666;
+    --border:#E8E8E8;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    background:var(--warm);
+    color:var(--charcoal);
+
+}
+
+main{
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:24px;
+
+}
+
+/* ===== SCREEN ===== */
+
+.screen{
+
+    display:none;
+    width:100%;
+    max-width:420px;
+
+}
+
+.screen.active{
+
+    display:block;
+
+}
+
+/* ===== LANDING ===== */
+
+#landing{
+
+    text-align:center;
+
+}
+
+
+.logo{
+
+    width:90px;
+    display:block;
+    margin:auto;
+
+}
+
+h1{
+
+    margin-top:28px;
+    font-size:34px;
+    font-weight:600;
+
+}
+
+p{
+
+    margin-top:16px;
+    line-height:1.8;
+    color:var(--gray);
+
+}
+
+.tap-text{
+
+    display:block;
+    margin-top:40px;
+
+    color:var(--wine);
+
+    font-weight:600;
+
+    animation:blink 1.5s infinite;
+
+}
+
+@keyframes blink{
+
+    0%{
+
+        opacity:.3;
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:.3;
+
+    }
+
+}
+
+/* ===== CARD ===== */
+
+.card{
+
+    background:#fff;
+
+    border-radius:24px;
+
+    padding:38px 30px 30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.card h2{
+
+    text-align:center;
+    margin-bottom:18px;
+
+}
+
+
+.subtitle{
+
+    text-align:center;
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+/* ===== FORM ===== */
+
+.form-group{
+
+    margin-bottom:22px;
+
+}
+
+label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+}
+
+input,
+textarea{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    border:2px solid var(--border);
+
+    border-radius:14px;
+
+    font-size:15px;
+
+    font-family:'Poppins',sans-serif;
+
+    outline:none;
+
+    transition:.25s;
+
+}
+
+input:focus,
+textarea:focus{
+
+    border-color:var(--wine);
+
+}
+
+/* ===== GUEST FIELD ===== */
+
+#guestFields{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    transition:.3s;
+
+}
+
+
+.guest-item{
+
+    animation:fadeIn .25s ease;
+
+}
+
+/* ===== COUNTER ===== */
+
+.counter{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.counter button{
+
+    width:56px;
+
+    height:56px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--wine);
+
+    color:#fff;
+
+    font-size:30px;
+
+    font-weight:500;
+
+    line-height:1;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    margin:0;
+
+}
+
+.counter button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.counter button:disabled{
+
+    opacity:.45;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+}
+
+#pax{
+
+    width:50px;
+
+    height:56px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:34px;
+
+    font-weight:600;
+
+    color:var(--charcoal);
+
+    user-select:none;
+
+}
+
+/* ===== CHECKBOX ===== */
+
+.checkbox{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    cursor:pointer;
+
+    font-weight:500;
+
+}
+
+.checkbox input{
+
+    width:18px;
+
+    height:18px;
+
+}
+
+/* ===== BUTTON ===== */
+
+.submit-btn{
+
+    width:100%;
+
+    margin-top:10px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:var(--wine);
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.submit-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 25px rgba(123,38,53,.25);
+
+}
+
+.btn-loading{
+
+    opacity: .8;
+
+    pointer-events: none;
+
+    cursor: wait;
+
+}
+
+/* ===== ANIMATION ===== */
+
+.fade-in{
+
+    animation:fadeIn .25s ease;
+
+}
+
+.fade-out{
+
+    opacity:0;
+
+    transform:translateY(8px);
+
+    transition:.25s;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(8px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:480px){
+
+    .card{
+
+        padding:24px;
+
+    }
+
+    h1{
+
+        font-size:30px;
+
+    }
+
+}
+
+#representativeOption{
+
+    margin-top:10px;
+    margin-bottom:25px;
+
+}
+
+
+
+
+.guest-item{
+
+    animation:slideUp .35s ease;
+
+}
+
+@keyframes slideUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+.divider{
+
+    width:100%;
+    height:1px;
+
+    background:#ECECEC;
+
+    margin:32px 0;
+
+}
+
+/* ===============================
+   FORM VALIDATION
+=============================== */
+
+.error-message{
+
+    display:block;
+
+    margin-top:6px;
+
+    color:#D32F2F;
+
+    font-size:13px;
+
+    font-weight:500;
+
+    min-height:18px;
+
+}
+
+.input-error{
+
+    border:2px solid #D32F2F !important;
+
+}
+
+/* =====================================
+SUCCESS SCREEN
+===================================== */
+
+.success-screen{
+
+    position: fixed;
+    inset: 0;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(20,20,20,.35);
+
+    backdrop-filter: blur(10px);
+
+    z-index: 9999;
+
+    animation: fadeIn .3s ease;
+
+}
+
+.success-card{
+
+    width: 88%;
+    max-width: 340px;
+
+    background: white;
+
+    border-radius: 28px;
+
+    padding: 42px 28px;
+
+    text-align: center;
+
+    animation: popup .35s ease;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.18);
+
+}
+
+.success-circle{
+
+    width:90px;
+    height:90px;
+
+    margin:auto;
+    margin-bottom:28px;
+
+    border-radius:50%;
+
+    background:#27C46A;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:
+    0 10px 25px rgba(39,196,106,.35);
+
+    animation:bounce .45s ease;
+
+}
+
+.success-card h2{
+
+    font-size:30px;
+
+    margin-bottom:14px;
+
+}
+
+.success-card p{
+
+    color:#666;
+
+    line-height:1.7;
+
+    margin-bottom:32px;
+
+}
+
+.success-btn{
+
+    width:100%;
+
+    height:56px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#7B1E32;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.success-btn:hover{
+
+    transform:translateY(-2px);
+
+    background:#661728;
+
+}
+
+@keyframes popup{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px) scale(.9);
+
+}
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+/* Tombol loading */
+
+.btn-loading{
+
+    opacity: .75;
+
+    pointer-events: none;
+
+    cursor: wait;
+
+}
+
+/* =====================================
+BUTTON LOADING
+===================================== */
+
+.btn-loading{
+
+    pointer-events:none;
+
+    opacity:.9;
+
+    position:relative;
+
+    color:transparent !important;
+
+}
+
+.btn-loading::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:22px;
+    height:22px;
+
+    top:50%;
+    left:50%;
+
+    margin-left:-11px;
+    margin-top:-11px;
+
+    border:3px solid rgba(255,255,255,.4);
+
+    border-top:3px solid white;
+
+    border-radius:50%;
+
+    animation:spin .8s linear infinite;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+@keyframes bounce{
+
+0%{
+
+transform:scale(.2);
+
+opacity:0;
+
+}
+
+60%{
+
+transform:scale(1.12);
+
+}
+
+100%{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+/* ===========================
+   SPLASH SCREEN
+=========================== */
+
+.splash-screen{
+
+    position:fixed;
+    inset:0;
+
+    background:#F7F4EF;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:99999;
+
+    transition:.6s;
+}
+
+.splash-screen.hide{
+
+    opacity:0;
+    visibility:hidden;
+
+}
+
+.splash-logo{
+
+    width:90px;
+
+    margin-bottom:20px;
+
+    animation:logoFloat 1.2s infinite alternate;
+
+}
+
+.splash-screen h2{
+
+    color:#7E2334;
+
+    font-size:30px;
+
+}
+
+@keyframes logoFloat{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-8px);
+
+    }
+
+}
+
+/* =====================================
+INTRO ANIMATION
+===================================== */
+
+.intro-logo{
+
+    opacity:0;
+
+    transform:translateY(80px);
+
+    animation:introLogo 1s ease forwards;
+
+}
+
+.intro-title{
+
+    opacity:0;
+
+    animation:fadeUp .8s ease forwards;
+
+    animation-delay:.8s;
+
+}
+
+.intro-subtitle{
+
+    opacity:0;
+
+    animation:fadeUp .8s ease forwards;
+
+    animation-delay:1.1s;
+
+}
+
+.intro-tap{
+
+    opacity:0;
+
+    animation:
+
+    fadeUp .8s ease forwards,
+
+    blink 1.8s infinite;
+
+    animation-delay:
+
+    1.4s,
+
+    2.2s;
+
+}
+
+@keyframes introLogo{
+
+0%{
+
+opacity:0;
+
+transform:translateY(70px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
+
+}
+
+@keyframes blink{
+
+0%,100%{
+
+opacity:1;
+
+}
+
+50%{
+
+opacity:.35;
+
+}
+
+}
+
+.screen{
+
+    transition:.35s ease;
+
+}
